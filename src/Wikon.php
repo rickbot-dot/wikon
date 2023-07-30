@@ -17,8 +17,9 @@
  */
 
 if (!defined("WIKON")) {
-  header("Location: ../index.php");
-  exit;
+  define("WIKON", "[unknown version]");
+  $error = "This script was not run through the Wikon entry point, or another script that defines the WIKON constant.";
+  require "ErrorShow.php";
 }
 // Check the value of $wDBsoftware
 switch ($wDBsoftware) {
