@@ -1,7 +1,7 @@
 <?php
 /*
- * If you are seeing this in your web browser, your server is probably
- * not configured properly to run PHP applications!
+ * If you are seeing this code in your web browser, your server
+ * is probably not configured properly to run PHP applications!
  *
  * See the INSTALL, UPGRADE, and FAQ files for more information
  * and pointers to samples.
