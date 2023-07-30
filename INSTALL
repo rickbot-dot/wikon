@@ -1,0 +1,104 @@
+Wikon 1.0 "Aggresive Animal" Install Guide
+==========================================
+This file explains how to install Wikon for your wiki. This process
+is fairly simple and straightforward.
+
+You should be logged in as root while following this tutorial.
+
+Requirements
+------------
+You will need:
+* An operating system other than Windows or similar systems
+* Git
+* PHP
+* Apache, lighttpd, or nginx
+* MySQL, PostgreSQL, or SQLite. Support for more databases will be added
+  with additional major updates. This guide is for Wikon 1.0.
+  You will also need php-mysqli (php-mysql on some Linux distros),
+  php-pgsql, or php-sqlite3 respectively.
+
+Soft Requirements
+-----------------
+* To use the CaptchaEditing extension, install and enable the GD library.
+* [for MySQL users only] For security reasons, you should disable
+  .mysql_history by linking it to /dev/null. The file will contain your
+  database password which could be used to perform admin-only actions
+  with immoral hacking. You can do this with this command:
+
+       rm ~/.mysql_history
+       ln -s /dev/null ~/.mysql_history
+
+Getting Wikon
+-------------
+Choose a path that your server software is set up to serve files at.
+
+To install Wikon, run this command in the directory where you would
+like to install it:
+
+    git clone https://github.com/TylerMS887/wikon w --branch rel-full/aggressive --depth 1
+
+This will download the entire Wikon 1.0 package. If you want to only
+download the wiki and not bundled extensions, run this instead:
+
+    git clone https://github.com/TylerMS887/wikon w --branch rel-core/aggressive --depth 1
+
+Database Setup
+--------------
+Before your wiki can work, you will need to set up the database.
+
+MySQL Setup
+~~~~~~~~~~~
+MySQL is the recommended choice for Wikon wikis.
+
+If you don't have access to the shell (most hosting providers disallow shell
+access for safety reasons), you may be able to use a MySQL management
+tool provided by your hosting service, such as phpMyAdmin or Adminer.
+
+Open the MySQL console and run the following commands:
+
+    CREATE DATABASE wiki;
+    CREATE USER 'wikiuser'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL ON wiki.* TO 'wikiuser'@'localhost' WITH GRANT OPTION;
+
+Replace "wiki" with the name of the database you would like to use, "wikiuser"
+with the MySQL username you would like to use, and most importantly,
+"password" with a password to use for your user.
+
+Do not leave the password as "password" as this is insecure and can be
+thought to be leaked in this file.
+
+SQLite Setup
+~~~~~~~~~~~~
+SQLite works pretty well with Wikon.
+
+If you don't have access to the shell (most hosting providers disallow shell
+access for safety reasons), you may be able to use an SQLite management
+tool provided by your hosting service, such as phpLiteAdmin.
+
+Run the following command in the directory where you want to store the
+database:
+
+    sqlite3 wikon.sqlite3
+
+This will create an empty SQLite database.
+This path will be configured as the Wikon database in setup.
+
+PostgreSQL Setup
+~~~~~~~~~~~~~~~~
+PostgreSQL is not officially tested but should work.
+
+If you don't have access to the shell (most hosting providers disallow shell
+access for safety reasons), you may be able to use a PostgreSQL management
+tool provided by your hosting service, such as phpPgAdmin.
+
+Open the PostgreSQL console and run the following commands:
+
+    CREATE USER wikiuser WITH NOCREATEDB NOCREATEROLE NOSUPERUSER ENCRYPTED PASSWORD 'password';
+    CREATE DATABASE wiki WITH OWNER wikiuser;
+
+Replace "wiki" with the name of the database you would like to use, "wikiuser"
+with the PostgreSQL username you would like to use, and most importantly,
+"password" with a password to use for your user.
+
+Do not leave the password as "password" as this is insecure and can be
+thought to be leaked in this file.
