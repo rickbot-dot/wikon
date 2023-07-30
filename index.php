@@ -2,14 +2,32 @@
 /***************************************************************
  *               Wikon 1.0 - Pre-Release                       *
  ***************************************************************
- * If you are seeing this code in your web browser, your server*
+ * If you are seeing this in your web browser, your server     *
  * is probably not configured properly to run PHP applications!*
  *                                                             *
  * See the INSTALL, UPGRADE, and FAQ files for more information*
  * and pointers to samples.                                    *
+ * You may be able to solve this issue by enabling the "php"   *
+ * server module if you use Apache (which most users do).      *
  *                                                             *
  * This is the entrypoint to other parts of wikon.             *
  **************************************************************/
+/* SPDX-License-Identifer: GPL-2.0-or-later
+ * This file is part of Wikon.
+ *
+ * Wikon is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * Wikon is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wikon.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 // Define Wikon version, used to identify the software
 define("WIKON", "1.0");
