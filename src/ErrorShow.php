@@ -1,6 +1,7 @@
 <?php
 $wikon_version = WIKON;
 echo <<<EOF
+<!DOCTYPE html>
 <style>
 body {
     font-family: Arial, sans-serif;
