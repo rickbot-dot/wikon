@@ -1,7 +1,20 @@
 <?php
 $wikon_version = WIKON;
 echo <<<EOF
-<style>body{font-family:Arial,sans-serif;padding:10px;text-align:center}h1{font-weight:normal}</style>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+h1 {
+    font-weight: normal;
+}
+</style>
 <h1>Wikon $wikon_version internal error</h1>
 <p>$error</p>
 EOF;
