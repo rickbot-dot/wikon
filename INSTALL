@@ -69,7 +69,8 @@ thought to be leaked in this file.
 
 SQLite Setup
 ~~~~~~~~~~~~
-SQLite works pretty well with Wikon.
+SQLite works pretty well with Wikon, because it is a simple server
+that does not have permissions.
 
 If you don't have access to the shell (most hosting providers disallow shell
 access for safety reasons), you may be able to use an SQLite management
@@ -79,6 +80,8 @@ Run the following command in the directory where you want to store the
 database:
 
     sqlite3 wikon.sqlite3
+
+Then type .exit to leave the SQLite prompt, which we won't use.
 
 This will create an empty SQLite database.
 This path will be configured as the Wikon database in setup.
