@@ -16,7 +16,7 @@
  * along with Wikon.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-if !(defined("WIKON")) {
+if (!defined("WIKON")) {
   header("Location: ../index.php");
   exit;
 }
