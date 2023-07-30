@@ -102,3 +102,7 @@ with the PostgreSQL username you would like to use, and most importantly,
 
 Do not leave the password as "password" as this is insecure and can be
 thought to be leaked in this file.
+
+Wikon Configuration
+===================
+Go to your wiki, then click on "set up the wiki" to set up your wiki.
