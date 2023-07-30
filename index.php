@@ -10,6 +10,10 @@
  * You may be able to solve this issue by enabling the "php"   *
  * server module if you use Apache (which most users do).      *
  *                                                             *
+ * If you are not the admin of the wiki server, then the server*
+ * may be upgrading PHP versions or repairing it.              *
+ * Please try again in a few minutes.                          *
+ *                                                             *
  * This is the entrypoint to other parts of wikon.             *
  **************************************************************/
 /* SPDX-License-Identifer: GPL-2.0-or-later
