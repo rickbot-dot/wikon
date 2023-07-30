@@ -11,8 +11,8 @@
  * server module if you use Apache (which most users do).      *
  *                                                             *
  * If you are not the admin of the wiki server, then the server*
- * may be upgrading PHP versions or repairing it.              *
- * Please try again in a few minutes.                          *
+ * may be upgrading PHP versions or repairing from an error or *
+ * (D)DoS attack. Please try again in a few minutes.           *
  *                                                             *
  * This is the entrypoint to other parts of wikon.             *
  **************************************************************/
