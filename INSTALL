@@ -50,22 +50,12 @@ MySQL Setup
 ~~~~~~~~~~~
 MySQL is the recommended choice for Wikon wikis.
 
+Run the MySQL.php script in the pre-setup-scripts folder that came with your
+Wikon installation.
+
 If you don't have access to the shell (most hosting providers disallow shell
 access for safety reasons), you may be able to use a MySQL management
 tool provided by your hosting service, such as phpMyAdmin or Adminer.
-
-Open the MySQL console and run the following commands:
-
-    CREATE DATABASE wiki;
-    CREATE USER 'wikiuser'@'localhost' IDENTIFIED BY 'password';
-    GRANT ALL ON wiki.* TO 'wikiuser'@'localhost' WITH GRANT OPTION;
-
-Replace "wiki" with the name of the database you would like to use, "wikiuser"
-with the MySQL username you would like to use, and most importantly,
-"password" with a password to use for your user.
-
-Do not leave the password as "password" as this is insecure and can be
-thought to be leaked in this file.
 
 SQLite Setup
 ~~~~~~~~~~~~
