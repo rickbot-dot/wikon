@@ -15,7 +15,7 @@ define("WIKON", "1.0");
 // Load LocalSettings.php, if it doesn't exist, direct the sysop to installer
 if (!file_exists("LocalSettings.php")) {
   $error = "LocalSettings.php not found.<br>Please <a href=\"wiki-install/web/install.php\">set up the wiki</a> first.";
-  require "error.php";
+  require "src/ErrorShow.php";
 }
 require "LocalSettings.php";
 
