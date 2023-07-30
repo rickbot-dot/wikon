@@ -4,7 +4,6 @@ echo <<<EOF
 <style>
 body {
     font-family: Arial, sans-serif;
-    padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
