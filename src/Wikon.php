@@ -26,7 +26,7 @@ switch ($wDBsoftware) {
   // If set to sqlite, define WIKI_DATABASE_CONN as an SQLite connection
   case "sqlite":
     error_log("Connecting to SQLite database", 0);
-    if !($wDBfile) {
+    if (!$wDBfile) {
       $error = "Please provide the file to use for Wikon.";
       require "ErrorShow.php";
     }
