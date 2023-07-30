@@ -21,7 +21,7 @@ switch ($wDBsoftware) {
   // If set to mysqli, define WIKI_DATABASE_CONN as a mysqli connection
   case "mysqli":
     error_log("Connecting to MySQL database", 0);
-    WIKI_DATABASE_CONN = new mysqli($wDBhost, $wDBuser, $wDBpass, $wDBname);
+    $WIKI_DATABASE_CONN = new mysqli($wDBhost, $wDBuser, $wDBpass, $wDBname);
     break;
   // If set to sqlite, define WIKI_DATABASE_CONN as an SQLite connection
   case "sqlite":
@@ -30,12 +30,12 @@ switch ($wDBsoftware) {
       $error = "Please provide the file to use for Wikon.";
       require "ErrorShow.php";
     }
-    WIKI_DATABASE_CONN = new SQLite3($wDBfile);
+    $WIKI_DATABASE_CONN = new SQLite3($wDBfile);
     break;
   // If set to postgres, define WIKI_DATABASE_CONN as a postgres connection
   case "postgres":
     error_log("Connecting to Postgres database", 0);
-    WIKI_DATABASE_CONN = pg_connect("host=$wDBhost dbname=$wDBname user=$wDBuser password=$wDBpass");
+    $WIKI_DATABASE_CONN = pg_connect("host=$wDBhost dbname=$wDBname user=$wDBuser password=$wDBpass");
     break;
   // If set to anything else, set $error and run ErrorShow.php
   default:
