@@ -44,8 +44,5 @@ if (!file_exists("LocalSettings.php")) {
 }
 require "LocalSettings.php";
 
-// Expose the software version in headers
-header("Wikon-Version: " . WIKON);
-
 // Run Wikon itself
 require "src/Wikon.php";
