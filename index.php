@@ -39,7 +39,7 @@ $IP = __DIR__;
 
 // Load LocalSettings.php, if it doesn't exist, direct the sysop to installer
 if (!file_exists("LocalSettings.php")) {
-  $error = "LocalSettings.php not found.<br>Please <a href=\"wikiconf/install.php\">set up the wiki</a> first.";
+  $error = "LocalSettings.php not found. Please <a href=\"wikiconf/install.php\">set up the wiki</a> first. Refer to <a href=\"INSTALL\">the installation guide</a> for more info.";
   require "src/ErrorShow.php";
 }
 require "LocalSettings.php";
