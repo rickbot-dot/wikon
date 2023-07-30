@@ -16,6 +16,10 @@
  * along with Wikon.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+if !(defined("WIKON")) {
+  header("Location: ../index.php");
+  exit;
+}
 // Check the value of $wDBsoftware
 switch ($wDBsoftware) {
   // If set to mysqli, define WIKI_DATABASE_CONN as a mysqli connection
