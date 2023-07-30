@@ -21,7 +21,12 @@ switch ($wDBsoftware) {
   // If set to mysqli, define WIKI_DATABASE_CONN as a mysqli connection
   case "mysqli":
     error_log("Connecting to MySQL database", 0);
-    $WIKI_DATABASE_CONN = new mysqli($wDBhost, $wDBuser, $wDBpass, $wDBname);
+    try {
+      $WIKI_DATABASE_CONN = new mysqli($wDBhost, $wDBuser, $wDBpass, $wDBname);
+    } catch (Exception $e) {
+      $error = "MySQL returned an error: <code>$e</code><br><br>Please confirm that the database, user and server name do not have typos, and that the password is correct.";
+      require "ErrorShow.php";
+    }
     break;
   // If set to sqlite, define WIKI_DATABASE_CONN as an SQLite connection
   case "sqlite":
@@ -35,7 +40,12 @@ switch ($wDBsoftware) {
   // If set to postgres, define WIKI_DATABASE_CONN as a postgres connection
   case "postgres":
     error_log("Connecting to Postgres database", 0);
-    $WIKI_DATABASE_CONN = pg_connect("host=$wDBhost dbname=$wDBname user=$wDBuser password=$wDBpass");
+    try {
+      $WIKI_DATABASE_CONN = pg_connect("host=$wDBhost dbname=$wDBname user=$wDBuser password=$wDBpass");
+    } catch (Exception $e) {
+      $error = "Postgres returned an error: <code>$e</code><br><br>Please confirm that the database, user and server name do not have typos, and that the password is correct.";
+      require "ErrorShow.php";
+    }
     break;
   // If set to anything else, set $error and run ErrorShow.php
   default:
