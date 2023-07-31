@@ -1,4 +1,8 @@
 <?php
+if (PHP_SAPI != "cli") {
+  echo "This script is shell only.";
+  exit;
+}
 // Get the user input from command line
 echo "Enter username: ";
 $username = trim(fgets(STDIN));
