@@ -8,7 +8,9 @@ You should be logged in as root while following this tutorial.
 Requirements
 ------------
 You will need:
-* An operating system other than Windows or similar systems
+* An operating system other than Windows or similar systems.
+  Alternatively, you can install Wikon on a Windows server with the
+  Windows Subsystem for Linux (WSL).
 * Git
 * PHP
 * Apache, lighttpd, or nginx
