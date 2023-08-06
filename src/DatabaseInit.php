@@ -16,12 +16,6 @@
  * along with Wikon.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-if (!defined("WIKON")) {
-  define("WIKON", "[unknown version]");
-  $error = "This script was not run through the Wikon entry point, or another script that defines the WIKON constant.";
-  require "ErrorShow.php";
-}
-
 /**
  * Connect to the MySQL database.
  */
