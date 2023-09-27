@@ -45,4 +45,4 @@ if (!file_exists("LocalSettings.php")) {
 require "LocalSettings.php";
 
 // Run Wikon itself
-require "src/Wikon.php";
+require "src/WikonMain.php";
