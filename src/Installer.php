@@ -4,8 +4,6 @@ function check_session() {
     return session_status() === PHP_SESSION_ACTIVE;
 }
 
-$session_max_lifetime = ini_get("session.gc_maxlifetime");
-
 if (check_session()) {
     if ($_COOKIE["session_id"] !== $_SESSION['id']) {
         // Redirect or display an error message
@@ -14,7 +12,7 @@ if (check_session()) {
 }
 
 session_start();
-setcookie("session_id", $_SESSION['id'], time() + $session_max_lifetime, "/");
+setcookie("session_id", $_SESSION['id'], time() + 1440, "/");
 
 echo <<<HTML
 
