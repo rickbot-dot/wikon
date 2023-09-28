@@ -1,9 +1,16 @@
 <?php
 
+function check_session() {
+    return session_status() === PHP_SESSION_ACTIVE;
+}
+
 $session_max_lifetime = ini_get("session.gc_maxlifetime");
-if ($_COOKIE["session_id"] !== $_SESSION['id']) {
-    // Redirect or display an error message
-    exit("Another user is running this script, sorry for the incovenience.");
+
+if (check_session()) {
+    if ($_COOKIE["session_id"] !== $_SESSION['id']) {
+        // Redirect or display an error message
+        exit("Another user is running this script, sorry for the incovenience.");
+    }
 }
 
 session_start();
