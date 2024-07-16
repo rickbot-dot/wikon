@@ -14,13 +14,12 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with Wikon.  If not, see <https://www.gnu.org/licenses/>.
+ **********************************************************************
+ * This is a script that will load the appropiate
  */
 
-/**
- * Connect to the MySQL database.
- */
+// MySQL support (why not?)
 function connectToMySQLDatabase() {
-  error_log("Connecting to MySQL database", 0);
   try {
     global $WIKI_DATABASE_CONN, $wDBhost, $wDBuser, $wDBpass, $wDBname;
     $WIKI_DATABASE_CONN = new mysqli($wDBhost, $wDBuser, $wDBpass, $wDBname);
@@ -30,11 +29,8 @@ function connectToMySQLDatabase() {
   }
 }
 
-/**
- * Connect to the SQLite database.
- */
+// SQLite support
 function connectToSQLiteDatabase() {
-  error_log("Connecting to SQLite database", 0);
   global $WIKI_DATABASE_CONN, $wDBfile;
   if (!$wDBfile) {
     $error = "Please set \$wDBfile to the database file to use for this wiki.";
@@ -43,11 +39,8 @@ function connectToSQLiteDatabase() {
   $WIKI_DATABASE_CONN = new SQLite3($wDBfile);
 }
 
-/**
- * Connect to the Postgres database.
- */
+// Postgres support
 function connectToPostgresDatabase() {
-  error_log("Connecting to Postgres database", 0);
   try {
     global $WIKI_DATABASE_CONN, $wDBhost, $wDBuser, $wDBpass, $wDBname;
     $WIKI_DATABASE_CONN = pg_connect("host=$wDBhost dbname=$wDBname user=$wDBuser password=$wDBpass");
@@ -59,6 +52,7 @@ function connectToPostgresDatabase() {
 
 // Connect to the database based on the value of $wDBsoftware
 switch ($wDBsoftware) {
+
   case "mysqli":
     connectToMySQLDatabase();
     break;
@@ -69,6 +63,7 @@ switch ($wDBsoftware) {
     connectToPostgresDatabase();
     break;
   default:
-    $error = "Your LocalSettings.php file is configured to use a software that is not supported by Wikon. \$wDBsoftware must be one of the following: mysqli, sqlite, or postgres. If you need help, please refer to the installation guide or <a href='https://github.com/TylerMS887/wikon/issues/new/choose'>create a new issue</a> to report a bug or request a feature.";
+    error_log("Couldn't get a database.");
+    $error = "Your LocalSettings.php file is set up to utilize a software that is not compatible with Wikon's specifications. \$wDBsoftware must be one of the following: mysqli, sqlite, or postgres. If you need help, please refer to the installation guide or <a href='https://github.com/TylerMS887/wikon/issues/new/choose'>create a new issue</a> to report a bug or request a feature.";
     require "ErrorShow.php";
 }
