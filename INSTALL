@@ -40,24 +40,31 @@ like to install it:
     git clone https://github.com/TylerMS887/wikon w --branch rel-full/aggressive --depth 1
 
 This will download the entire Wikon 1.0 package. If you want to only
-download the wiki and not bundled extensions, run this instead:
-
-    git clone https://github.com/TylerMS887/wikon w --branch rel-core/aggressive --depth 1
+download the wiki and not bundled extensions, change "full" to "core".
 
 Database Setup
 --------------
 Before your wiki can work, you will need to set up the database.
+See below for instructions for each compatible SQL software.
 
 MySQL Setup
 ~~~~~~~~~~~
 MySQL is the recommended choice for Wikon wikis.
 
 Run the MySQL.php script in the pre-setup-scripts folder that came with your
-Wikon installation.
+Wikon installation. Note that you should run MySQL.php via the terminal, as
+it is not available via PHP server handlers such as apache2-php for safety reasons.
 
 If you don't have access to the shell (most hosting providers disallow shell
 access for safety reasons), you may be able to use a MySQL management
 tool provided by your hosting service, such as phpMyAdmin or Adminer.
+In that case, here's what to do:
+1. Create a database, with any name.
+2. Create a user, with any name or password. However, we recommend a strong
+   password to prevent security breaches.
+3. Grant the new user rights to the database.
+4. When you are configuring Wikon, you can now enter the details for your
+   database and password.
 
 SQLite Setup
 ~~~~~~~~~~~~
@@ -100,4 +107,9 @@ thought to be leaked in this file.
 
 Wikon Configuration
 ===================
-Go to your wiki, then click on "set up the wiki" to set up your wiki.
+Go to your wiki. If it shows this:
+
+    LocalSettings.php not found. Please set up the wiki first. Refer to the installation guide for more info.
+
+then your wiki structure has been stup. You can now click on "set up the wiki"
+to set up your wiki.
