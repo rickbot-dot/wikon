@@ -14,8 +14,11 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with Wikon.  If not, see <https://www.gnu.org/licenses/>.
- **********************************************************************
- * This is a script that will load the appropiate
+ *
+ * This is a script that will load the appropiate database.
+ * The context of the "Appropiate database" is complex, as Wikon identifies
+ * it with several variables. For convienence, each vanilla database-related
+ * variable is prefixed with "wDB".
  */
 
 // MySQL support (why not?)
